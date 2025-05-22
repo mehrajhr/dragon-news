@@ -18,7 +18,7 @@ const NewsDetails = () => {
             <header>
                 <Header></Header>
             </header>
-            <main className='grid grid-cols-12 my-10'>
+            <main className='grid grid-cols-12 my-10 gap-10'>
                 <section className='col-span-9'>
                     <h1 className='font-bold text-2xl'>Dragon News</h1>
                     <div className='my-5'>
