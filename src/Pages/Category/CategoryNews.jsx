@@ -2,6 +2,7 @@ import { id } from "date-fns/locale";
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 import Categories from "../../Components/Categories";
+import NewsCart from "../../Components/NewsCart";
 
 const CategoryNews = () => {
   const { id } = useParams();
@@ -20,7 +21,14 @@ const CategoryNews = () => {
       setCategoryNews(filterNews);
     }
   }, [data, id]);
-  return <div>category  {categoryNews.length}</div>;
+  return <div>
+    <h1 className="font-bold mb-5 text-center">Total <span className="text-secondary">{categoryNews.length}</span> news Found</h1>
+    <div className="grid grid-cols-1 gap-5">
+      {
+        categoryNews.map(news => <NewsCart news={news} key={news.id}></NewsCart>)
+      }
+    </div>
+  </div>;
 };
 
 export default CategoryNews;
