@@ -1,6 +1,7 @@
 import React from 'react';
 import { CiBookmark, CiShare2 } from 'react-icons/ci';
 import { FaEye, FaStar } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const NewsCart = ({ news }) => {
   const {
@@ -10,6 +11,7 @@ const NewsCart = ({ news }) => {
     details,
     rating,
     total_view,
+    id
   } = news;
 
   return (
@@ -43,7 +45,7 @@ const NewsCart = ({ news }) => {
           {details.length > 250 ? (
             <>
               {details.slice(0, 250)}...
-              <span className="text-blue-600 font-medium cursor-pointer ml-1">Read More</span>
+              <Link to={`/news-details/${id}`} className="text-blue-600 font-medium cursor-pointer ml-1">Read More</Link>
             </>
           ) : (
             details
